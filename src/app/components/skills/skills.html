@@ -1,0 +1,12 @@
+<section id="skills">
+  <h2>Compétences</h2>
+  @for (skill of skills; track skill.nom) {
+  <div class="skill-header">
+      <span class="nom">{{ skill.nom }}</span>
+      <span class="pourcentage">{{ skill.niveau }}%</span>
+    </div>
+    <div class="barre">
+      <div class="niveau" [style.width.%]="skill.affiche"></div>
+    </div>
+}
+</section>

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+$couleur-principale: #7f5af0;
+$couleur-secondaire: #2cb67d;
+$couleur-fond: #16213e;
+$couleur-fond-2: #0f3460;
+$couleur-texte: #fffffe;
+$couleur-texte-doux: #a7a9be;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+    background-color: $couleur-fond;
+    font-family: 'Exo 2', sans-serif;
+    color: $couleur-texte;
+    scroll-behavior:smooth;
+}
+
+section{
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: $couleur-principale;
+}
+
+h3{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+a {
+  color: $couleur-principale;
+  text-decoration: none;
+
+  &:hover {
+    color: $couleur-secondaire;
+    transition: color 0.3s ease;
+  }
+}
+
+button, .btn {
+  background-color: $couleur-principale;
+  color: $couleur-texte;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $couleur-secondaire;
+  }
+}

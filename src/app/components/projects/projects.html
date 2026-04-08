@@ -1,0 +1,10 @@
+<section id="projects">
+    <h2>Mes Projets</h2>
+@for (projet of projets; track projet.titre) {
+  <div class="carte">
+    <h3>{{ projet.titre }}</h3>
+    <p>{{ projet.description }}</p>
+    <a [href]="projet.lien" target="_blank">Voir sur GitHub</a>
+  </div>
+}
+</section>

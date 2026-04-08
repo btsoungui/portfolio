@@ -1,0 +1,28 @@
+@use '../../../styles' as s;
+
+input, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background-color: s.$couleur-fond-2;
+  color: s.$couleur-texte;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  &::placeholder {
+    color: s.$couleur-texte-doux;
+  }
+
+  &:focus {
+    border-color: s.$couleur-principale;
+  }
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
