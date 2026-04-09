@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 export class Projects {
   projets = [
     {
-      titre: 'Gestion de bibliothèque',
-      description: 'Application Java avec base de données MySQL.',
-      lien: 'https://github.com/toi/projet1'
+      titre: "Feu d'artifice",
+      description: "Simulation de feu d'artifice avec des Easter Eggs",
+      lien: 'https://github.com/btsoungui/Feu-d-artifice'
     },
     {
       titre: 'Site vitrine',

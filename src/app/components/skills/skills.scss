@@ -1,22 +1,75 @@
 @use '../../../styles' as *;
 
+.skills-group {
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+
+  h3 {
+    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $couleur-secondaire;
+    margin-bottom: 18px;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, $couleur-principale, $couleur-secondaire);
+  }
+}
+
 .skill {
-  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 10px 500px rgba(0, 0, 0, 0.18);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  }
 }
 
 .skill-header {
   display: flex;
+  align-items: center; // 🔥 important
   justify-content: space-between;
-  margin-bottom: 8px;
+  gap: 10px;
+
+  .image {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    img.symfony {
+      filter: invert(18%) sepia(16%) saturate(3349%) hue-rotate(329deg) brightness(96%) contrast(104%);
+    }
+  }
 
   .nom {
+    flex: 1;
     font-weight: 600;
   }
-  .pourcentage {
-    color: $couleur-principale;
-    font-weight: 700;
-  }
-
 }
 
 .barre{
