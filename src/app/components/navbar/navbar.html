@@ -5,4 +5,13 @@
     <li><a href="#projects">Projets</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="switch" [class.active]="isDark" (click)="toggleTheme()">
+  <div class="cercle">
+    @if (isDark) {
+      <i class="fas fa-moon"></i>
+    } @else {
+      <i class="fas fa-sun"></i>
+    }
+  </div>
+</div>
 </nav>

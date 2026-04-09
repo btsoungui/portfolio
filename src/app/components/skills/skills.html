@@ -52,4 +52,30 @@
       </div>
     }
   </div>
+
+  <div class="skills-group">
+    <h3>Outils</h3>
+
+    @for (skill of toolSkills; track skill.nom) {
+      <div class="skill">
+        <div class="skill-header">
+          <span class="image">
+            <img 
+              [src]="getIconUrl(skill.image)" 
+              [alt]="skill.nom"
+              [class.symfony]="skill.image === 'symfony'"
+              (error)="onImgError($event)"
+            >
+          </span>
+
+          <span class="nom">{{ skill.nom }}</span>
+          <span class="pourcentage">{{ skill.affiche }}%</span>
+        </div>
+
+        <div class="barre">
+          <div class="niveau" [style.width.%]="skill.affiche ?? 0"></div>
+        </div>
+      </div>
+    }
+  </div>
 </section>
