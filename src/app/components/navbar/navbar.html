@@ -1,17 +1,25 @@
 <nav>
-  <ul>
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <span class="logo">Bryan</span>
+  
+  <button class="hamburger" (click)="toggleMenu()">
+    <i class="fas" [class.fa-bars]="!menuOuvert" [class.fa-xmark]="menuOuvert"></i>
+  </button>
+
+  <ul [class.ouvert]="menuOuvert">
+    <li><a href="#about" (click)="toggleMenu()">À propos</a></li>
+    <li><a href="#skills" (click)="toggleMenu()">Compétences</a></li>
+    <li><a href="#projects" (click)="toggleMenu()">Projets</a></li>
+    <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+    <li>
+      <div class="switch" [class.active]="isDark" (click)="toggleTheme()">
+        <div class="cercle">
+          @if (isDark) {
+            <i class="fas fa-moon"></i>
+          } @else {
+            <i class="fas fa-sun"></i>
+          }
+        </div>
+      </div>
+    </li>
   </ul>
-  <div class="switch" [class.active]="isDark" (click)="toggleTheme()">
-  <div class="cercle">
-    @if (isDark) {
-      <i class="fas fa-moon"></i>
-    } @else {
-      <i class="fas fa-sun"></i>
-    }
-  </div>
-</div>
 </nav>

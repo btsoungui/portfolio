@@ -6,39 +6,71 @@ nav {
   left: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   background-color: $couleur-principale;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.7s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: $couleur-principale;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 
-    .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    li a {
+      text-decoration: none;
+      color: $couleur-texte-doux;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $couleur-texte;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: $couleur-texte;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
     }
 
     ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0 !important;
+      padding: 10px 0;
+
+      &.ouvert {
         display: flex;
-        list-style: none;
-        gap: 2rem;
+      }
 
-        li {
-            a {
-                text-decoration: none;
-                color: $couleur-texte-doux;
-                transition: color 0.3s ease;
-
-                &:hover {
-                    color: $couleur-texte;
-                }
-            }
-        }
+      li {
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
     }
+  }
 }
+
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -71,13 +103,10 @@ nav {
         font-size: 11px;
         color: $couleur-principale;
       }
-
-      &.active {
-        transform: translateX(24px);
-    i {
-        color: $couleur-fond-2;
     }
-      }
+
+    &.active .cercle {
+      transform: translateX(24px);
     }
   }
 }

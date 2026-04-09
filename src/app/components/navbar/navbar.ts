@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Navbar {
   isDark = false;
+  menuOuvert = false;
+
+toggleMenu() {
+  this.menuOuvert = !this.menuOuvert;
+}
 
   toggleTheme() {
     this.isDark = !this.isDark;
