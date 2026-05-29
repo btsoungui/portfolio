@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Navbar } from "./components/navbar/navbar";
 import { About } from "./components/about/about";
-import { Hero } from "./components/hero/hero";
 import { Projects } from "./components/projects/projects";
 import { Skills } from "./components/skills/skills";
 import { Contact } from "./components/contact/contact";
@@ -10,7 +9,7 @@ import { Photo } from './photo/photo';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, About, Hero, Projects, Skills, Contact, Footer],
+  imports: [Navbar, About, Projects, Skills, Contact, Footer, Photo],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

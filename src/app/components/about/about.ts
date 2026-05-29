@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 interface AboutCard {
   icon: string;
@@ -9,9 +8,9 @@ interface AboutCard {
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrl: './about.scss',
+  styleUrls: ['./about.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class About {
   readonly highlight =

@@ -3,7 +3,7 @@ import { Photo } from '../../photo/photo';
 
 @Component({
   selector: 'app-hero',
-  imports: [Photo],
+  imports: [],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

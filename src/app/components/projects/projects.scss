@@ -1,0 +1,209 @@
+@use '../../../styles' as *;
+
+#projects {
+  h2 {
+    margin-bottom: clamp(40px, 6vw, 60px);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(20px, 3vw, 28px);
+  margin-top: clamp(30px, 4vw, 40px);
+}
+
+.projet-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 20px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: clamp(20px, 3.5vw, 28px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(127, 90, 240, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .card-header h3 {
+      color: $couleur-secondaire;
+    }
+
+    .project-link {
+      transform: translateX(4px) translateY(-4px);
+      color: $couleur-principale;
+    }
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 16px);
+
+  h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0;
+    flex: 1;
+    line-height: 1.2;
+    transition: color 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(127, 90, 240, 0.15);
+  border-radius: 10px;
+  color: rgba(127, 90, 240, 0.8);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba(127, 90, 240, 0.25);
+    color: $couleur-principale;
+  }
+
+  i {
+    font-size: 0.9rem;
+  }
+}
+
+.description {
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.tags {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 12px);
+  flex-wrap: wrap;
+  margin: clamp(8px, 1.5vw, 12px) 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 14px);
+  background: rgba(127, 90, 240, 0.12);
+  color: $couleur-principale;
+  border-radius: 8px;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 600;
+  border: 1px solid rgba(127, 90, 240, 0.2);
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+
+  .projet-card:hover & {
+    background: rgba(127, 90, 240, 0.18);
+    border-color: rgba(127, 90, 240, 0.35);
+  }
+}
+
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.5vw, 10px);
+  margin-top: clamp(8px, 1.5vw, 12px);
+  padding: clamp(11px, 1.5vw, 14px) clamp(20px, 3vw, 28px);
+  background: linear-gradient(135deg, rgba(127, 90, 240, 0.9), rgba(44, 182, 125, 0.7));
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  box-shadow: 0 8px 20px rgba(127, 90, 240, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(127, 90, 240, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  i {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+  }
+}
+
+:host-context(body.light-mode) .projet-card {
+  background: rgba(26, 26, 46, 0.06);
+  border-color: rgba(26, 26, 46, 0.12);
+  box-shadow: 0 12px 36px rgba(12, 18, 36, 0.08);
+}
+
+:host-context(body.light-mode) .projet-card:hover {
+  background: rgba(26, 26, 46, 0.09);
+  border-color: rgba(26, 26, 46, 0.16);
+  box-shadow: 0 20px 56px rgba(12, 18, 36, 0.14);
+}
+
+:host-context(body.light-mode) .carte-header h3 {
+  color: #1a1a2e;
+}
+
+:host-context(body.light-mode) .description {
+  color: rgba(26, 26, 46, 0.8);
+}
+
+:host-context(body.light-mode) .tag {
+  background: rgba(127, 90, 240, 0.1);
+  color: $couleur-principale;
+  border-color: rgba(127, 90, 240, 0.2);
+}
+
+:host-context(body.light-mode) .projet-card:hover .tag {
+  background: rgba(127, 90, 240, 0.15);
+  border-color: rgba(127, 90, 240, 0.3);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    flex-wrap: wrap;
+  }
+}

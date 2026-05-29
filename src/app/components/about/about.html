@@ -1,17 +1,21 @@
+
 <section id="about" class="about-section">
   <div class="about-intro">
     <span class="eyebrow">À propos</span>
     <h2>Je suis Bryan, développeur web passionné</h2>
     <p>{{ highlight }}</p>
+    
   </div>
 
   <div class="about-grid">
-    <article *ngFor="let card of cards" class="about-card">
-      <div class="card-icon">
-        <i class="fas {{ card.icon }}" aria-hidden="true"></i>
-      </div>
-      <h3>{{ card.title }}</h3>
-      <p>{{ card.description }}</p>
-    </article>
+    @for (card of cards; track card.title) {
+      <article class="about-card">
+        <div class="card-icon">
+          <i class="fas {{ card.icon }}" aria-hidden="true"></i>
+        </div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </article>
+    }
   </div>
 </section>

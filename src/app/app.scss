@@ -1,0 +1,11 @@
+/* App layout adjustments */
+main {
+  margin-right: clamp(280px, 20vw, 320px);
+  transition: margin-right 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  main {
+    margin-right: 0;
+  }
+}

@@ -13,15 +13,17 @@ $couleur-texte-doux: #a7a9be;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
-    background-color: $couleur-fond;
-    font-family: 'Exo 2', sans-serif;
-    color: $couleur-texte;
-    scroll-behavior:smooth;
-    transition: background-color 0.7s ease, color 0.3s ease;
+  background-color: $couleur-fond;
+  font-family: 'Exo 2', sans-serif;
+  color: $couleur-texte;
+  scroll-behavior: smooth;
+  transition: background-color 0.6s ease, color 0.3s ease;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.light-mode {
@@ -63,37 +65,53 @@ body.light-mode .cv-download {
   background: rgba(127, 90, 240, 0.95);
 }
 
-section{
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    transition: background-color 0.7s ease, color 0.7s ease;
+section {
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
-h1{
-    font-size: 3rem;
-    font-weight: 800;
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: clamp(30px, 5vw, 50px);
   color: $couleur-principale;
+  letter-spacing: -0.01em;
 }
 
-h3{
-    font-size: 1.3rem;
-    font-weight: 600;
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 a {
   color: $couleur-principale;
   text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 
   &:hover {
     color: $couleur-secondaire;
-    transition: color 0.3s ease;
+  }
+
+  &:focus {
+    outline: 2px solid $couleur-principale;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
@@ -101,14 +119,47 @@ button, .btn {
   background-color: $couleur-principale;
   color: $couleur-texte;
   border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
+  padding: clamp(11px, 1.5vw, 14px) clamp(24px, 3vw, 32px);
+  border-radius: 12px;
   cursor: pointer;
   font-family: 'Exo 2', sans-serif;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(127, 90, 240, 0.2);
 
   &:hover {
     background-color: $couleur-secondaire;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(44, 182, 125, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(127, 90, 240, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(127, 90, 240, 0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(127, 90, 240, 0.8);
   }
 }

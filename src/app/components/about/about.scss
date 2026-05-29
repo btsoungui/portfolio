@@ -1,141 +1,196 @@
+@use '../../../styles' as *;
+
 #about {
-  padding: 3.5rem 1.5rem;
-  background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.18), transparent 28%),
-    rgba(255, 255, 255, 0.03);
+  padding: clamp(80px, 10vw, 120px) clamp(20px, 5vw, 40px) clamp(60px, 8vw, 100px);
+  background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.12), transparent 32%),
+    rgba(255, 255, 255, 0.02);
   border-radius: 32px;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  margin-top: clamp(40px, 6vw, 80px);
 }
 
 .about-intro {
-  max-width: 720px;
-  margin: 0 auto 2rem;
+  max-width: 740px;
+  margin: 0 auto 3.5rem;
   text-align: center;
-  transition: color 0.3s ease;
 }
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 1rem;
-  color: #9da6ff;
-  letter-spacing: 0.3em;
+  margin-bottom: 1.2rem;
+  color: $couleur-secondaire;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  transition: color 0.3s ease;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.85;
 }
 
 #about h2 {
-  font-size: clamp(2rem, 2.6vw, 3rem);
-  line-height: 1.05;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 #about p {
   max-width: 680px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
-  line-height: 1.8;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .about-card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: 2rem 1.5rem;
-  min-height: 240px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  gap: 1rem;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, color 0.3s ease;
+  gap: 1.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $couleur-secondaire, transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .about-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.2);
-  border-color: rgba(127, 90, 240, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  border-color: rgba(127, 90, 240, 0.25);
+}
+
+.about-card:hover::before {
+  opacity: 1;
 }
 
 .card-icon {
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 18px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 16px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(127, 90, 240, 0.95), rgba(44, 182, 125, 0.95));
+  background: linear-gradient(135deg, rgba(127, 90, 240, 0.9), rgba(44, 182, 125, 0.9));
   color: #fff;
-  box-shadow: 0 12px 30px rgba(127, 90, 240, 0.18);
+  box-shadow: 0 12px 32px rgba(127, 90, 240, 0.2);
+  transition: all 0.35s ease;
+}
+
+.about-card:hover .card-icon {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 16px 40px rgba(127, 90, 240, 0.3);
 }
 
 .card-icon i {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .about-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   margin: 0;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .about-card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.7;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-:host-context(body.light-mode) .about-intro,
-:host-context(body.light-mode) .about-intro .eyebrow,
+/* Light mode overrides */
+:host-context(body.light-mode) #about {
+  background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.08), transparent 32%),
+    rgba(255, 255, 255, 0.5);
+}
+
+:host-context(body.light-mode) .eyebrow {
+  color: $couleur-principale;
+  opacity: 0.9;
+}
+
 :host-context(body.light-mode) #about h2,
-:host-context(body.light-mode) #about p,
-:host-context(body.light-mode) .about-card h3,
-:host-context(body.light-mode) .about-card p {
-  color: #1a1a2e !important;
+:host-context(body.light-mode) .about-card h3 {
+  color: #1a1a2e;
 }
 
-:host-context(body.light-mode) #about .card-icon,
-:host-context(body.light-mode) #about .card-icon * {
-  color: #fff !important;
+:host-context(body.light-mode) #about p,
+:host-context(body.light-mode) .about-card p {
+  color: rgba(26, 26, 46, 0.85);
 }
 
 :host-context(body.light-mode) .about-card {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(26, 26, 46, 0.08);
-  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.08);
+  background: rgba(26, 26, 46, 0.08);
+  border-color: rgba(26, 26, 46, 0.12);
+  box-shadow: 0 12px 32px rgba(12, 18, 36, 0.08);
 }
 
-body.light-mode .about-card {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(26, 26, 46, 0.08);
-  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.08);
+:host-context(body.light-mode) .about-card:hover {
+  background: rgba(26, 26, 46, 0.12);
+  box-shadow: 0 24px 48px rgba(12, 18, 36, 0.14);
+  border-color: rgba(127, 90, 240, 0.25);
+}
+
+:host-context(body.light-mode) .about-card::before {
+  background: linear-gradient(90deg, transparent, $couleur-principale, transparent);
 }
 
 @media (max-width: 960px) {
   .about-grid {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  #about {
+    padding: 3rem 1.5rem;
   }
 }
 
 @media (max-width: 680px) {
   #about {
-    padding: 2.2rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .about-card {
     padding: 1.8rem 1.3rem;
+    min-height: auto;
+  }
+
+  #about h2 {
+    margin-bottom: 1rem;
+  }
+
+  .about-intro {
+    margin-bottom: 2.5rem;
   }
 }

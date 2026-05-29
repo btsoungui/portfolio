@@ -1,10 +1,25 @@
 <section id="projects">
-    <h2>Mes Projets</h2>
-@for (projet of projets; track projet.titre) {
-  <div class="carte">
-    <h3>{{ projet.titre }}</h3>
-    <p>{{ projet.description }}</p>
-    <a [href]="projet.lien" target="_blank">Voir sur GitHub</a>
+  <h2>Mes Projets</h2>
+  <div class="projects-grid">
+    @for (projet of projets; track projet.titre) {
+      <article class="projet-card">
+        <div class="card-header">
+          <h3>{{ projet.titre }}</h3>
+          <a class="project-link" [href]="projet.lien" target="_blank" aria-label="Accéder au projet {{ projet.titre }} sur GitHub">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          </a>
+        </div>
+        <p class="description">{{ projet.description }}</p>
+        <div class="tags">
+          @for (tag of projet.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+        <a class="btn-github" [href]="projet.lien" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          Voir sur GitHub
+        </a>
+      </article>
+    }
   </div>
-}
 </section>
