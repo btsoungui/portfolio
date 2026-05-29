@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 export class Skills implements OnInit {
   getIconUrl(skillName: string): string {
     const lang = skillName.toLowerCase().split(' ')[0];
-    return `https://raw.githubusercontent.com/devicons/devicon/master/icons/${lang}/${lang}-original.svg`;
+    return `https://unpkg.com/devicon@latest/icons/${lang}/${lang}-original.svg`;
   }
   skills = [
     { nom: 'HTML', niveau: 80, affiche: 0, image: 'html5', type: 'language' },

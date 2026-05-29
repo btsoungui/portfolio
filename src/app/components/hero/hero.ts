@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Photo } from '../../photo/photo';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [Photo],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

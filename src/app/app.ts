@@ -6,6 +6,7 @@ import { Projects } from "./components/projects/projects";
 import { Skills } from "./components/skills/skills";
 import { Contact } from "./components/contact/contact";
 import { Footer } from "./components/footer/footer";
+import { Photo } from './photo/photo';
 
 @Component({
   selector: 'app-root',

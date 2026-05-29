@@ -1,0 +1,154 @@
+﻿@use '../../styles.scss' as *;
+
+$photo-border: 1.5px solid rgba(255, 255, 255, 0.18);
+$photo-radius: 28px;
+$photo-gap: 1rem;
+$photo-shadow: 0 28px 90px rgba(0, 0, 0, 0.24);
+
+#tete {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+.cadre {
+  position: relative;
+  width: min(420px, 100%);
+  margin: 0 auto;
+}
+
+.photo-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.14), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(44, 182, 125, 0.12), transparent 22%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: $photo-radius;
+  background: rgba(255, 255, 255, 0.08);
+  border: $photo-border;
+  backdrop-filter: blur(14px);
+  box-shadow: $photo-shadow;
+  padding: 1.1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 36px 110px rgba(0, 0, 0, 0.28);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.02);
+}
+
+.photo-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: $photo-gap;
+  color: #f7f7ff;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.photo-card .photo-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  transition: color 0.3s ease;
+}
+
+.photo-card strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.photo-card span {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 90%;
+  transition: color 0.3s ease;
+}
+
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1.2rem;
+  background: rgba(127, 90, 240, 0.95);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 18px 50px rgba(127, 90, 240, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv-download:hover,
+.cv-download:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(127, 90, 240, 1);
+  box-shadow: 0 22px 58px rgba(127, 90, 240, 0.26);
+}
+
+.cv-download i {
+  font-size: 0.95rem;
+}
+
+body.light-mode .photo-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(26, 26, 46, 0.08);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .photo-card figcaption,
+body.light-mode .photo-card .photo-label,
+body.light-mode .photo-card span {
+  color: #1a1a2e;
+}
+
+body.light-mode .photo-card img {
+  border-color: rgba(26, 26, 46, 0.06);
+}
+
+body.light-mode .cv-download {
+  background: rgba(127, 90, 240, 0.95);
+}
+
+@media (max-width: 520px) {
+  .photo-card {
+    padding: 0.9rem;
+  }
+
+  .photo-card img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .photo-card strong {
+    font-size: 1.1rem;
+  }
+}

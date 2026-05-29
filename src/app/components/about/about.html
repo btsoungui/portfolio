@@ -1,8 +1,17 @@
+<section id="about" class="about-section">
+  <div class="about-intro">
+    <span class="eyebrow">À propos</span>
+    <h2>Je suis Bryan, développeur web passionné</h2>
+    <p>{{ highlight }}</p>
+  </div>
 
-<section id="about">
-  <h2>À propos</h2>
-  <p>
-    Je suis étudiant en BUT Informatique à l'IUT.
-    Passionné par le développement web et les nouvelles technologies.
-  </p>
+  <div class="about-grid">
+    <article *ngFor="let card of cards" class="about-card">
+      <div class="card-icon">
+        <i class="fas {{ card.icon }}" aria-hidden="true"></i>
+      </div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.description }}</p>
+    </article>
+  </div>
 </section>
