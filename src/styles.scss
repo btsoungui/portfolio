@@ -14,6 +14,10 @@ $theme-transition-duration: 0.3s;
   --theme-transition-duration: #{$theme-transition-duration};
 }
 
+html {
+  font-size: 90%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -94,35 +98,35 @@ body.light-mode .cv-download {
 }
 
 section {
-  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px);
-  max-width: 1200px;
+  padding: clamp(54px, 7.2vw, 90px) clamp(18px, 4.5vw, 36px);
+  max-width: 1080px;
   margin: 0 auto;
   transition: background-color $theme-transition-duration ease, color $theme-transition-duration ease;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(1.98rem, 4.5vw, 3.15rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.62rem, 3.6vw, 2.52rem);
   font-weight: 800;
-  margin-bottom: clamp(30px, 5vw, 50px);
+  margin-bottom: clamp(27px, 4.5vw, 45px);
   color: $couleur-principale;
   letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(0.99rem, 1.8vw, 1.35rem);
   font-weight: 700;
   letter-spacing: -0.005em;
 }
 
 p {
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.855rem, 1.35vw, 0.99rem);
   font-weight: 400;
   letter-spacing: 0.3px;
 }
@@ -147,11 +151,11 @@ button, .btn {
   background-color: $couleur-principale;
   color: $couleur-texte;
   border: none;
-  padding: clamp(11px, 1.5vw, 14px) clamp(24px, 3vw, 32px);
-  border-radius: 12px;
+  padding: clamp(10px, 1.35vw, 13px) clamp(22px, 2.7vw, 29px);
+  border-radius: 11px;
   cursor: pointer;
   font-family: 'Exo 2', sans-serif;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  font-size: clamp(0.855rem, 0.9vw, 0.945rem);
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
   letter-spacing: 0.5px;

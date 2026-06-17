@@ -1,17 +1,17 @@
 @use '../../../styles' as *;
 
 #about {
-  padding: clamp(80px, 10vw, 120px) clamp(20px, 5vw, 40px) clamp(60px, 8vw, 100px);
+  padding: clamp(72px, 9vw, 108px) clamp(18px, 4.5vw, 36px) clamp(54px, 7.2vw, 90px);
   background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.12), transparent 32%),
     rgba(255, 255, 255, 0.02);
-  border-radius: 32px;
+  border-radius: 29px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(12px);
-  margin-top: clamp(40px, 6vw, 80px);
+  margin-top: clamp(36px, 5.4vw, 72px);
 }
 
 .about-intro {
-  max-width: 740px;
+  max-width: 666px;
   margin: 0 auto 3.5rem;
   text-align: center;
 }
@@ -28,7 +28,7 @@
 }
 
 #about h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-size: clamp(1.8rem, 2.7vw, 2.88rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
   font-weight: 800;
@@ -36,17 +36,17 @@
 }
 
 #about p {
-  max-width: 680px;
+  max-width: 612px;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.05rem;
+  font-size: 0.945rem;
   line-height: 1.7;
   font-weight: 400;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -54,9 +54,9 @@
 .about-card {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
+  border-radius: 22px;
   padding: 2.5rem 2rem;
-  min-height: 260px;
+  min-height: 234px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -91,7 +91,7 @@
 .card-icon {
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 16px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
   background: linear-gradient(135deg, rgba(127, 90, 240, 0.9), rgba(44, 182, 125, 0.9));
@@ -106,11 +106,11 @@
 }
 
 .card-icon i {
-  font-size: 1.3rem;
+  font-size: 1.17rem;
 }
 
 .about-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -120,7 +120,7 @@
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.855rem;
 }
 
 /* Light mode overrides */

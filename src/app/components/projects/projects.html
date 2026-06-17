@@ -1,25 +1,55 @@
-<section id="projects">
-  <h2>Mes Projets</h2>
+<section
+  id="projects"
+  aria-labelledby="projects-title"
+  role="link"
+  tabindex="0"
+  (click)="openDetails()"
+  (keydown.enter)="openDetails()"
+  (keydown.space)="openDetails(); $event.preventDefault()"
+>
+  <h2 id="projects-title">Mes Projets</h2>
+
   <div class="projects-grid">
     @for (projet of projets; track projet.titre) {
       <article class="projet-card">
         <div class="card-header">
           <h3>{{ projet.titre }}</h3>
-          <a class="project-link" [href]="projet.lien" target="_blank" aria-label="Accéder au projet {{ projet.titre }} sur GitHub">
+          <a
+            class="project-link"
+            [href]="projet.lien"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Acceder au projet {{ projet.titre }} sur GitHub"
+            (click)="$event.stopPropagation()"
+          >
             <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           </a>
         </div>
+
         <p class="description">{{ projet.description }}</p>
+
         <div class="tags">
           @for (tag of projet.tags; track tag) {
             <span class="tag">{{ tag }}</span>
           }
         </div>
-        <a class="btn-github" [href]="projet.lien" target="_blank">
+
+        <a
+          class="btn-github"
+          [href]="projet.lien"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="$event.stopPropagation()"
+        >
           <i class="fab fa-github" aria-hidden="true"></i>
           Voir sur GitHub
         </a>
       </article>
     }
   </div>
+
+  <span class="details-hint">
+    Voir le detail des projets
+    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+  </span>
 </section>

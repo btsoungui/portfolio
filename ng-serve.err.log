@@ -15,3 +15,192 @@
          ╵                             [32m~~~~~~[0m
 
 [39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1002: Unterminated string literal.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:32:142:
+[37m      32 │ ...avec les opérations principales de consultation et de gestion d[32m[37mes
+         ╵                                                                   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:6:
+[37m      33 │       [32mcontacts[37m.",
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18004: No value exists in scope for the shorthand property 'contacts'. Either declare one or provide an initializer.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:6:
+[37m      33 │       [32mcontacts[37m.",
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2353: Object literal may only specify known properties, and 'contacts' does not exist in type 'Projet'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:6:
+[37m      33 │       [32mcontacts[37m.",
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:14:
+[37m      33 │       contacts[32m.[37m",
+         ╵               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1003: Identifier expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:15:
+[37m      33 │       contacts.[32m",[37m
+         ╵                [32m~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1002: Unterminated string literal.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:33:17:
+[37m      33 │       contacts.",[32m[37m
+         ╵                  [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ':' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:6:
+[37m      34 │       [32mtags[37m: ['C', 'Algorithmique', 'Gestion de données'],
+         ╵       [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'tags'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:6:
+[37m      34 │       [32mtags[37m: ['C', 'Algorithmique', 'Gestion de données'],
+         ╵       [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:10:
+[37m      34 │       tags[32m:[37m ['C', 'Algorithmique', 'Gestion de données'],
+         ╵           [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2695: Left side of comma operator is unused and has no side effects.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:13:
+[37m      34 │       tags: [[32m'C'[37m, 'Algorithmique', 'Gestion de données'],
+         ╵              [32m~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2695: Left side of comma operator is unused and has no side effects.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:13:
+[37m      34 │       tags: [[32m'C', 'Algorithmique'[37m, 'Gestion de données'],
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ':' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:34:56:
+[37m      34 │       tags: ['C', 'Algorithmique', 'Gestion de données'[32m][37m,
+         ╵                                                        [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1002: Unterminated string literal.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:39:132:
+[37m      39 │ ... Turtle, intégrant des formes simples et une composition visuel[32m[37mle
+         ╵                                                                   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:6:
+[37m      40 │       [32mstructuré[37me.",
+         ╵       [32m~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18004: No value exists in scope for the shorthand property 'structurée'. Either declare one or provide an initializer.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:6:
+[37m      40 │       [32mstructuré[37me.",
+         ╵       [32m~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2353: Object literal may only specify known properties, and 'structurée' does not exist in type 'Projet'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:6:
+[37m      40 │       [32mstructuré[37me.",
+         ╵       [32m~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:16:
+[37m      40 │       structuré[32me[37m.",
+         ╵                [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1003: Identifier expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:17:
+[37m      40 │       structurée[32m."[37m,
+         ╵                 [32m~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1002: Unterminated string literal.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:40:19:
+[37m      40 │       structurée."[32m[37m,
+         ╵                   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ':' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:6:
+[37m      41 │       [32mtags[37m: ['Python', 'Turtle', 'Graphisme'],
+         ╵       [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'tags'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:6:
+[37m      41 │       [32mtags[37m: ['Python', 'Turtle', 'Graphisme'],
+         ╵       [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:10:
+[37m      41 │       tags[32m:[37m ['Python', 'Turtle', 'Graphisme'],
+         ╵           [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2695: Left side of comma operator is unused and has no side effects.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:13:
+[37m      41 │       tags: [[32m'Python'[37m, 'Turtle', 'Graphisme'],
+         ╵              [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2695: Left side of comma operator is unused and has no side effects.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:13:
+[37m      41 │       tags: [[32m'Python', 'Turtle'[37m, 'Graphisme'],
+         ╵              [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ':' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/projects/projects.ts:41:45:
+[37m      41 │       tags: ['Python', 'Turtle', 'Graphisme'][32m,[37m
+         ╵                                              [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mUnterminated string literal[0m
+
+    src/app/components/projects/projects.ts:60:151:
+[37m      60 │ ...ec les opérations principales de consultation et de gestion des,[32m[37m
+         ╵                                                                    [32m^[0m
+
+[39m[22m

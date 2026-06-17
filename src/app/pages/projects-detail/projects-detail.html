@@ -1,0 +1,79 @@
+<section class="projects-detail" aria-labelledby="projects-detail-title">
+  <a class="back-link" routerLink="/" fragment="projects">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+    Retour aux projets
+  </a>
+
+  <header class="projects-hero">
+    <span class="eyebrow">Projets</span>
+    <h1 id="projects-detail-title">Detail de mes projets</h1>
+    <p>
+      Une selection de projets personnels et academiques qui montrent ma progression en developpement web,
+      algorithmique, programmation graphique et structuration de code.
+    </p>
+  </header>
+
+  <div class="projects-layout">
+    <div class="project-sections">
+      @for (project of projects; track project.repository) {
+        <article class="detail-card">
+          <div class="project-heading">
+            <div>
+              <span class="repository">{{ project.repository }}</span>
+              <h2>{{ project.title }}</h2>
+            </div>
+
+            <a
+              class="project-link"
+              [href]="project.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ouvrir le depot {{ project.repository }} sur GitHub"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <p>{{ project.description }}</p>
+
+          <ul>
+            @for (highlight of project.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+
+          <div class="tech-list" aria-label="Technologies du projet {{ project.title }}">
+            @for (technology of project.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    <aside class="projects-summary" aria-label="Resume des projets">
+      <h2>Resume</h2>
+      <dl>
+        <div>
+          <dt>Nombre</dt>
+          <dd>4 projets presentes</dd>
+        </div>
+        <div>
+          <dt>Objectif</dt>
+          <dd>Montrer ma capacite a construire, organiser et presenter des realisations techniques.</dd>
+        </div>
+        <div>
+          <dt>Approche</dt>
+          <dd>Des projets courts, concrets et centres sur la pratique du code.</dd>
+        </div>
+      </dl>
+
+      <h3>Competences mobilisees</h3>
+      <ul class="summary-list">
+        @for (skill of skills; track skill) {
+          <li>{{ skill }}</li>
+        }
+      </ul>
+    </aside>
+  </div>
+</section>

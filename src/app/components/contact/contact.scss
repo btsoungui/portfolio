@@ -2,14 +2,14 @@
 
 input, textarea {
   width: 100%;
-  padding: clamp(12px, 2vw, 16px) clamp(14px, 2.5vw, 18px);
-  margin-bottom: clamp(14px, 2vw, 18px);
+  padding: clamp(11px, 1.8vw, 14px) clamp(13px, 2.25vw, 16px);
+  margin-bottom: clamp(13px, 1.8vw, 16px);
   background-color: rgba(15, 52, 96, 0.5);
   color: s.$couleur-texte;
   border: 1.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 11px;
   font-family: 'Exo 2', sans-serif;
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.855rem, 1.08vw, 0.945rem);
   outline: none;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
   letter-spacing: 0.3px;
@@ -32,7 +32,7 @@ input, textarea {
 }
 
 textarea {
-  height: clamp(140px, 20vh, 180px);
+  height: clamp(126px, 18vh, 162px);
   resize: vertical;
   font-weight: 400;
 }
