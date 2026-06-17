@@ -8,6 +8,11 @@ $couleur-fond: #16213e;
 $couleur-fond-2: #0f3460;
 $couleur-texte: #fffffe;
 $couleur-texte-doux: #a7a9be;
+$theme-transition-duration: 0.3s;
+
+:root {
+  --theme-transition-duration: #{$theme-transition-duration};
+}
 
 * {
   margin: 0;
@@ -20,10 +25,33 @@ body {
   font-family: 'Exo 2', sans-serif;
   color: $couleur-texte;
   scroll-behavior: smooth;
-  transition: background-color 0.6s ease, color 0.3s ease;
+  transition: background-color $theme-transition-duration ease, color $theme-transition-duration ease;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.theme-transitioning,
+body.theme-transitioning *,
+body.theme-transitioning *::before,
+body.theme-transitioning *::after {
+  transition-property: background, background-color, border-color, box-shadow, color, fill, outline-color, stroke, text-shadow !important;
+  transition-duration: var(--theme-transition-duration) !important;
+  transition-timing-function: ease !important;
+  transition-delay: 0s !important;
+}
+
+body.theme-view-transitioning,
+body.theme-view-transitioning *,
+body.theme-view-transitioning *::before,
+body.theme-view-transitioning *::after {
+  transition: none !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--theme-transition-duration);
+  animation-timing-function: ease;
 }
 
 body.light-mode {
@@ -69,7 +97,7 @@ section {
   padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 40px);
   max-width: 1200px;
   margin: 0 auto;
-  transition: background-color 0.6s ease, color 0.6s ease;
+  transition: background-color $theme-transition-duration ease, color $theme-transition-duration ease;
 }
 
 h1 {

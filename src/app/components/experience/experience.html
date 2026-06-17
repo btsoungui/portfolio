@@ -1,0 +1,52 @@
+<section
+  id="experience"
+  class="experience-section"
+  aria-labelledby="experience-title"
+  role="link"
+  tabindex="0"
+  (click)="openDetails()"
+  (keydown.enter)="openDetails()"
+  (keydown.space)="openDetails(); $event.preventDefault()"
+>
+  <div class="experience-heading">
+    <span class="eyebrow">Expérience</span>
+    <p class="period">{{ period }}</p>
+    <h2 id="experience-title">{{ company }}</h2>
+    <p class="summary">{{ summary }}</p>
+  </div>
+
+  <div class="experience-content">
+    <div class="timeline" aria-label="Missions réalisées pendant le stage">
+      @for (mission of missions; track mission.title) {
+        <article class="mission-card">
+          <div class="mission-icon" aria-hidden="true">
+            <i class="fas {{ mission.icon }}"></i>
+          </div>
+          <div>
+            <h3>{{ mission.title }}</h3>
+            <p>{{ mission.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <aside class="experience-aside" aria-label="Compétences mobilisées">
+      <h3>Ce que ce stage m’a apporte</h3>
+      <p>
+        Cette expérience m’a permis de renforcer mon autonomie, ma rigueur et ma capacité à transformer un besoin
+        concret en solution web utilisable.
+      </p>
+
+      <ul class="skill-list">
+        @for (skill of skills; track skill) {
+          <li>{{ skill }}</li>
+        }
+      </ul>
+
+      <span class="details-hint">
+        Voir le détail du stage
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </span>
+    </aside>
+  </div>
+</section>

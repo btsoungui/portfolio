@@ -6,10 +6,11 @@
   </button>
 
   <ul [class.ouvert]="menuOuvert">
-    <li><a href="#about" (click)="toggleMenu()">À propos</a></li>
-    <li><a href="#skills" (click)="toggleMenu()">Compétences</a></li>
-    <li><a href="#projects" (click)="toggleMenu()">Projets</a></li>
-    <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+    <li><a routerLink="/" fragment="about" (click)="closeMenu()">À propos</a></li>
+    <li><a routerLink="/" fragment="skills" (click)="closeMenu()">Compétences</a></li>
+    <li><a routerLink="/" fragment="experience" (click)="closeMenu()">Expérience</a></li>
+    <li><a routerLink="/" fragment="projects" (click)="closeMenu()">Projets</a></li>
+    <li><a routerLink="/" fragment="contact" (click)="closeMenu()">Contact</a></li>
     <li>
       <div class="switch" [class.active]="isDark" (click)="toggleTheme()">
         <div class="cercle">

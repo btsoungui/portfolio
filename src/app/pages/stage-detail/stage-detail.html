@@ -1,0 +1,57 @@
+<section class="stage-detail" aria-labelledby="stage-title">
+  <a class="back-link" routerLink="/" fragment="experience">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+    Retour à l’expérience
+  </a>
+
+  <header class="stage-hero">
+    <span class="eyebrow">Stage</span>
+    <h1 id="stage-title">Détail de mon stage full-stack chez AXOPEN</h1>
+    <p>
+      Une expérience professionnelle à Lyon, centrée sur le développement web full-stack, la qualité du code et la
+      progression dans un environnement de travail concret.
+    </p>
+  </header>
+
+  <div class="stage-layout">
+    <div class="stage-sections">
+      @for (section of sections; track section.title) {
+        <article class="detail-card">
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+
+          <ul>
+            @for (item of section.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+
+    <aside class="stage-summary" aria-label="Résumé du stage">
+      <h2>Résumé</h2>
+      <dl>
+        <div>
+          <dt>Type</dt>
+          <dd>Stage full-stack</dd>
+        </div>
+        <div>
+          <dt>Entreprise</dt>
+          <dd>AXOPEN, Lyon</dd>
+        </div>
+        <div>
+          <dt>Objectif</dt>
+          <dd>Gagner en autonomie et produire des fonctionnalités web utiles, propres et maintenables.</dd>
+        </div>
+      </dl>
+
+      <h3>Technologies mobilisées</h3>
+      <ul class="tech-list">
+        @for (technology of technologies; track technology) {
+          <li>{{ technology }}</li>
+        }
+      </ul>
+    </aside>
+  </div>
+</section>

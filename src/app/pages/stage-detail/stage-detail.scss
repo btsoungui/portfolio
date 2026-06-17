@@ -1,0 +1,190 @@
+@use '../../../styles' as *;
+
+.stage-detail {
+  padding-top: clamp(120px, 13vw, 160px);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.stage-hero {
+  max-width: 860px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: $couleur-secondaire;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.stage-hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+.stage-hero p,
+.detail-card p,
+.detail-card li,
+.stage-summary dd {
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.7;
+}
+
+.stage-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 2rem;
+  align-items: start;
+}
+
+.stage-sections {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.detail-card,
+.stage-summary {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.detail-card {
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.detail-card h2,
+.stage-summary h2,
+.stage-summary h3 {
+  margin: 0 0 1rem;
+  color: $couleur-texte;
+}
+
+.detail-card p {
+  margin: 0 0 1.25rem;
+}
+
+.detail-card ul,
+.tech-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detail-card li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.detail-card li + li {
+  margin-top: 0.75rem;
+}
+
+.detail-card li::before {
+  content: '';
+  position: absolute;
+  top: 0.7rem;
+  left: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: $couleur-secondaire;
+}
+
+.stage-summary {
+  position: sticky;
+  top: 110px;
+  padding: 1.5rem;
+}
+
+.stage-summary dl {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.stage-summary dt {
+  margin-bottom: 0.25rem;
+  color: $couleur-secondaire;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stage-summary dd {
+  margin: 0;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tech-list li {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  color: $couleur-texte;
+  background: rgba(127, 90, 240, 0.18);
+  border: 1px solid rgba(127, 90, 240, 0.24);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+:host-context(body.light-mode) .eyebrow,
+:host-context(body.light-mode) .stage-summary dt {
+  color: $couleur-principale;
+}
+
+:host-context(body.light-mode) .detail-card,
+:host-context(body.light-mode) .stage-summary {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(26, 26, 46, 0.1);
+  box-shadow: 0 16px 40px rgba(12, 18, 36, 0.08);
+}
+
+:host-context(body.light-mode) .detail-card h2,
+:host-context(body.light-mode) .stage-summary h2,
+:host-context(body.light-mode) .stage-summary h3,
+:host-context(body.light-mode) .tech-list li {
+  color: #1a1a2e;
+}
+
+:host-context(body.light-mode) .stage-hero p,
+:host-context(body.light-mode) .detail-card p,
+:host-context(body.light-mode) .detail-card li,
+:host-context(body.light-mode) .stage-summary dd {
+  color: rgba(26, 26, 46, 0.82);
+}
+
+:host-context(body.light-mode) .tech-list li {
+  background: rgba(127, 90, 240, 0.12);
+}
+
+@media (max-width: 900px) {
+  .stage-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .stage-detail {
+    padding-top: 110px;
+  }
+}
