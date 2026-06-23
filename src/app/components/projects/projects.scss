@@ -35,7 +35,6 @@
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
   transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
   position: relative;
-  overflow: hidden;
 
   &::before {
     content: '';
@@ -54,6 +53,7 @@
     border-color: rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 56px rgba(0, 0, 0, 0.18);
     background: rgba(255, 255, 255, 0.08);
+    z-index: 10;
 
     &::before {
       opacity: 1;
@@ -122,7 +122,7 @@
   display: flex;
   gap: clamp(7px, 1.35vw, 11px);
   flex-wrap: wrap;
-  margin: clamp(7px, 1.35vw, 11px) 0;
+  margin: clamp(7px, 1.35vw, 11px) 0 0;
 }
 
 .tag {
@@ -142,6 +142,104 @@
     border-color: rgba(127, 90, 240, 0.35);
   }
 }
+
+// ── Compétences BUT ─────────────────────────────────────────────────────────
+
+.competences {
+  display: flex;
+  gap: clamp(6px, 1vw, 9px);
+  flex-wrap: wrap;
+  padding-top: 2px;
+}
+
+.competence-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: clamp(4px, 0.65vw, 6px) clamp(9px, 1.1vw, 11px);
+  background: rgba(44, 182, 125, 0.1);
+  color: $couleur-secondaire;
+  border: 1px solid rgba(44, 182, 125, 0.22);
+  border-radius: 6px;
+  font-size: clamp(0.67rem, 0.82vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: default;
+  transition: background 0.25s ease, border-color 0.25s ease;
+
+  &:focus-visible {
+    outline: 2px solid $couleur-secondaire;
+    outline-offset: 2px;
+  }
+
+  // Tooltip box
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.94);
+    min-width: 190px;
+    max-width: 260px;
+    padding: 8px 12px;
+    background: rgba(10, 14, 30, 0.96);
+    color: rgba(232, 232, 240, 0.95);
+    border: 1px solid rgba(44, 182, 125, 0.28);
+    border-radius: 9px;
+    font-size: 0.73rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    white-space: normal;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  }
+
+  // Tooltip caret
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top: 6px solid rgba(10, 14, 30, 0.96);
+    z-index: 1001;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background: rgba(44, 182, 125, 0.18);
+    border-color: rgba(44, 182, 125, 0.38);
+
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) scale(1);
+    }
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .projet-card:hover & {
+    background: rgba(44, 182, 125, 0.13);
+    border-color: rgba(44, 182, 125, 0.28);
+  }
+}
+
+// ── GitHub button ────────────────────────────────────────────────────────────
 
 .btn-github {
   display: inline-flex;
@@ -177,6 +275,8 @@
   }
 }
 
+// ── Details hint ─────────────────────────────────────────────────────────────
+
 .details-hint {
   display: inline-flex;
   align-items: center;
@@ -194,6 +294,8 @@
 #projects:focus-visible .details-hint i {
   transform: translateX(4px);
 }
+
+// ── Light mode ───────────────────────────────────────────────────────────────
 
 :host-context(body.light-mode) .projet-card {
   background: rgba(26, 26, 46, 0.06);
@@ -226,9 +328,25 @@
   border-color: rgba(127, 90, 240, 0.3);
 }
 
+:host-context(body.light-mode) .competence-badge {
+  background: rgba(44, 182, 125, 0.08);
+  border-color: rgba(44, 182, 125, 0.2);
+}
+
+:host-context(body.light-mode) .competence-badge:hover,
+:host-context(body.light-mode) .competence-badge:focus {
+  background: rgba(44, 182, 125, 0.15);
+}
+
+:host-context(body.light-mode) .competence-badge::after {
+  background: rgba(10, 14, 30, 0.97);
+}
+
 :host-context(body.light-mode) .details-hint {
   color: $couleur-principale;
 }
+
+// ── Responsive ───────────────────────────────────────────────────────────────
 
 @media (max-width: 768px) {
   .projects-grid {

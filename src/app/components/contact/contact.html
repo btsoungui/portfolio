@@ -1,7 +1,140 @@
-<section id="contact">
-  <h2>Contact</h2>
-  <input [(ngModel)]="nom" placeholder="Ton nom" />
-  <input [(ngModel)]="email" placeholder="Ton email" />
-  <textarea [(ngModel)]="message" placeholder="Ton message"></textarea>
-  <button (click)="envoyer()">Envoyer</button>
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-layout">
+
+    <div class="contact-info">
+      <span class="eyebrow">Me contacter</span>
+      <h2 id="contact-title">Travaillons ensemble</h2>
+      <p class="contact-intro">
+        N'hésitez pas à m'écrire, je réponds rapidement.
+      </p>
+
+      <ul class="contact-links" aria-label="Moyens de contact directs">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/bryan-tsoungui-betene-b87110333/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link-item"
+          >
+            <span class="link-icon" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
+            <span class="link-text">
+              <span class="link-label">LinkedIn</span>
+              <span class="link-value">Bryan Tsoungui Betene</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/btsoungui"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link-item"
+          >
+            <span class="link-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+            <span class="link-text">
+              <span class="link-label">GitHub</span>
+              <span class="link-value">btsoungui</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact-form-wrapper">
+      @if (sendState() === 'success') {
+        <div class="status-message status-success" role="alert">
+          <i class="fas fa-check-circle" aria-hidden="true"></i>
+          Message envoyé ! Je te réponds dès que possible.
+        </div>
+      }
+
+      @if (sendState() === 'error') {
+        <div class="status-message status-error" role="alert">
+          <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+          Une erreur est survenue. Réessaie ou contacte-moi sur LinkedIn.
+        </div>
+      }
+
+      <form [formGroup]="form" (ngSubmit)="envoyer()" novalidate>
+        <div class="fields-row">
+          <div class="field">
+            <label for="nom">Nom <span class="required" aria-hidden="true">*</span></label>
+            <input
+              id="nom"
+              type="text"
+              formControlName="nom"
+              autocomplete="name"
+              placeholder="Ton nom"
+              [class.invalid]="nom.invalid && nom.touched"
+              aria-required="true"
+              [attr.aria-invalid]="nom.invalid && nom.touched"
+            />
+            @if (nom.invalid && nom.touched) {
+              <span class="field-error" role="alert">2 caractères minimum.</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              placeholder="ton@email.com"
+              [class.invalid]="email.invalid && email.touched"
+              aria-required="true"
+              [attr.aria-invalid]="email.invalid && email.touched"
+            />
+            @if (email.invalid && email.touched) {
+              <span class="field-error" role="alert">Adresse email invalide.</span>
+            }
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="titre">Sujet <span class="required" aria-hidden="true">*</span></label>
+          <input
+            id="titre"
+            type="text"
+            formControlName="titre"
+            placeholder="Objet de ton message"
+            [class.invalid]="titre.invalid && titre.touched"
+            aria-required="true"
+            [attr.aria-invalid]="titre.invalid && titre.touched"
+          />
+          @if (titre.invalid && titre.touched) {
+            <span class="field-error" role="alert">3 caractères minimum.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
+          <textarea
+            id="message"
+            formControlName="message"
+            rows="5"
+            placeholder="Dis-moi en quoi je peux t'aider…"
+            [class.invalid]="message.invalid && message.touched"
+            aria-required="true"
+            [attr.aria-invalid]="message.invalid && message.touched"
+          ></textarea>
+          @if (message.invalid && message.touched) {
+            <span class="field-error" role="alert">10 caractères minimum.</span>
+          }
+        </div>
+
+        <button type="submit" class="btn-send" [disabled]="sendState() === 'loading'">
+          @if (sendState() === 'loading') {
+            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+            Envoi en cours…
+          } @else {
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Envoyer le message
+          }
+        </button>
+      </form>
+    </div>
+
+  </div>
 </section>

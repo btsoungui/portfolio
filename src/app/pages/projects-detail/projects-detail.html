@@ -47,6 +47,24 @@
               <span>{{ technology }}</span>
             }
           </div>
+
+          <div class="competences-but" aria-label="Compétences BUT illustrées par ce projet">
+            <h3 class="competences-heading">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+              Compétences BUT
+            </h3>
+            <ul class="competences-list">
+              @for (comp of project.competences; track comp.code) {
+                <li class="competence-item">
+                  <span class="comp-code" aria-hidden="true">{{ comp.code }}</span>
+                  <div class="comp-content">
+                    <span class="comp-label">{{ competencesBut[comp.code] }}</span>
+                    <p class="comp-justification">{{ comp.justification }}</p>
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
         </article>
       }
     </div>
